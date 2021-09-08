@@ -1,6 +1,8 @@
 import unittest
 import functions
 
+# I would like to add more tests in the future. Not really just wanna make a
+# test commit.
 class GridTestCase(unittest.TestCase):
     """Test for main()."""
 
