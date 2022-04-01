@@ -161,7 +161,7 @@ def init_grid_api(url="http://www.cs.utep.edu/cheon/ws/sudoku/new/?size=9&level=
     no_grid_msg = "\n\nThere is no Sudoku puzzle to solve!\nMake sure either to pass the grid directly to the 'main' function or that the API request is successul."
     try:
         response = requests.get(url)
-        grid = np.array([0]*81).reshape(9, 9)
+        grid = np.array([0] * 81).reshape(9, 9)
         # print(response.json())
         for cell in response.json()['squares']:
             grid[cell['x']][cell['y']] = cell["value"]
@@ -212,12 +212,14 @@ def result(grid):
 
 
 # List of coordinates of tiles, belonging to each quadrant.
-Q = {'q1': list(zip(sorted(list(range(0, 3))*3), sorted(list(range(0, 3)))*3)),
-     'q2': list(zip(sorted(list(range(3, 6))*3), sorted(list(range(0, 3)))*3)),
-     'q3': list(zip(sorted(list(range(6, 9))*3), sorted(list(range(0, 3)))*3)),
-     'q4': list(zip(sorted(list(range(0, 3))*3), sorted(list(range(3, 6)))*3)),
-     'q5': list(zip(sorted(list(range(3, 6))*3), sorted(list(range(3, 6)))*3)),
-     'q6': list(zip(sorted(list(range(6, 9))*3), sorted(list(range(3, 6)))*3)),
-     'q7': list(zip(sorted(list(range(0, 3))*3), sorted(list(range(6, 9)))*3)),
-     'q8': list(zip(sorted(list(range(3, 6))*3), sorted(list(range(6, 9)))*3)),
-     'q9': list(zip(sorted(list(range(6, 9))*3), sorted(list(range(6, 9)))*3))}
+Q = {'q1': list(zip(sorted(list(range(0, 3)) * 3), sorted(list(range(0, 3))) * 3)),
+     'q2': list(zip(sorted(list(range(3, 6)) * 3), sorted(list(range(0, 3))) * 3)),
+     'q3': list(zip(sorted(list(range(6, 9)) * 3), sorted(list(range(0, 3))) * 3)),
+     'q4': list(zip(sorted(list(range(0, 3)) * 3), sorted(list(range(3, 6))) * 3)),
+     'q5': list(zip(sorted(list(range(3, 6)) * 3), sorted(list(range(3, 6))) * 3)),
+     'q6': list(zip(sorted(list(range(6, 9)) * 3), sorted(list(range(3, 6))) * 3)),
+     'q7': list(zip(sorted(list(range(0, 3)) * 3), sorted(list(range(6, 9))) * 3)),
+     'q8': list(zip(sorted(list(range(3, 6)) * 3), sorted(list(range(6, 9))) * 3)),
+     'q9': list(zip(sorted(list(range(6, 9)) * 3), sorted(list(range(6, 9))) * 3))}
+
+# just testing branching and pushing to remote
